@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
 	SOCKET hSocket;
 	SOCKADDR_IN servAddr;
 
-	char buffer[30];
+	char Message[30];
 	int strLen;
 
 	if (argc != 3)
@@ -47,13 +47,13 @@ int main(int argc, char* argv[])
 		ErrorHandling("connect() error!");
 	}
 
-	strLen = recv(hSocket, buffer, sizeof(buffer) - 1, 0);
+	strLen = recv(hSocket, Message, sizeof(Message) - 1, 0);
 	if (strLen == -1)
 	{
 		ErrorHandling("read() error!");
 	}
 
-	cout << "Message from server : " << buffer << endl;
+	cout << "Message from server : " << Message << endl;
 
 	closesocket(hSocket);
 	WSACleanup();

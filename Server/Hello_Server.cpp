@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 	SOCKADDR_IN servAddr, clntAddr;
 
 	int szClntAddr;
-	char buffer[] = "Hello World! and Socket!";
+	char Message[] = "Hello World! and Socket!";
 
 	if (argc != 2)
 	{
@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
 		ErrorHandling("accept() error!");
 	}
 
-	send(hClntSock, buffer, sizeof(buffer), 0);
+	send(hClntSock, Message, sizeof(Message), 0);
 
 	closesocket(hClntSock);
 	closesocket(hServSock);
