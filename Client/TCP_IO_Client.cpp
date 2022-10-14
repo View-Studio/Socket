@@ -17,9 +17,8 @@ int main(int argc, char* argv[])
 	SOCKET hSocket;
 	SOCKADDR_IN servAddr;
 
-	char Message[40];
-	int strLen = 0;
-	int idx = 0, readLen = 0;
+	char Message[128];
+	int strLen;
 
 	if (argc != 3)
 	{
@@ -48,18 +47,19 @@ int main(int argc, char* argv[])
 		ErrorHandling("connect() error!");
 	}
 
-	while (readLen = recv(hSocket, &Message[idx++], 1, 0))
+	for (int i = 0; i < 3000; ++i)
 	{
-		if (readLen == SOCKET_ERROR)
-		{
-			ErrorHandling("read() error!");
-		}
+		// Busy Waiting
+		cout << "Wait time " << i << endl;
+	}
 
-		strLen += readLen;
+	strLen = recv(hSocket, Message, sizeof(Message) - 1, 0);
+	if (strLen == -1)
+	{
+		ErrorHandling("read() error!");
 	}
 
 	cout << "Message from server : " << Message << endl;
-	cout << "Function read call count : " << strLen << endl;
 
 	closesocket(hSocket);
 	WSACleanup();

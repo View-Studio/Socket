@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Hello_Server.cpp" />
+    <ClCompile Include="TCP_IO_Server.cpp" />
     <ClCompile Include="TCP_Server.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
