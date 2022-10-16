@@ -16,10 +16,16 @@
     <Filter Include="소스 파일\CopyFiles">
       <UniqueIdentifier>{34429b75-7dc8-4475-a993-d61a35503386}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Endian">
+      <UniqueIdentifier>{6bc7ffe8-9716-427b-83c7-fcbdc146478c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CopyFiles.cpp">
       <Filter>소스 파일\CopyFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Endian_Conv.cpp">
+      <Filter>소스 파일\Endian</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
