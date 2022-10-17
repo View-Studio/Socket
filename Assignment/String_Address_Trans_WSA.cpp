@@ -1,5 +1,7 @@
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #undef UNICODE
 #undef _UNICODE
+
 #include <iostream>
 #include <WinSock2.h>
 
@@ -23,10 +25,10 @@ int main(int argc, char* argv[])
 	}
 
 	Size = sizeof(ServAddr);
-	WSAStringToAddress(StrAddr, AF_INET, NULL, (SOCKADDR*)&ServAddr, &Size);
+	WSAStringToAddress((LPTSTR)StrAddr, AF_INET, NULL, (SOCKADDR*)&ServAddr, &Size);
 
 	Size = sizeof(StrBuffer);
-	WSAAddressToString((SOCKADDR*)&ServAddr, sizeof(ServAddr), NULL, StrBuffer, &Size);
+	WSAAddressToString((SOCKADDR*)&ServAddr, sizeof(ServAddr), NULL, StrBuffer, (LPDWORD)&Size);
 
 	cout << "Second Conv Result : " << StrBuffer << endl;
 
