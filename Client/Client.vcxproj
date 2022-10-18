@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Echo_Client.cpp" />
     <ClCompile Include="Hello_Client.cpp" />
     <ClCompile Include="TCP_Client.cpp" />
     <ClCompile Include="TCP_IO_Client.cpp" />
