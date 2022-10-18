@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 		ErrorHandling("WSAStartup() error!");
 	}
 
-	hServSock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	hServSock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (hServSock == INVALID_SOCKET)
 	{
 		ErrorHandling("socket() error!");

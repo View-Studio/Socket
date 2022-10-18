@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 		cout << "WSAStartup Error" << endl;
 	}
 
-	ServSock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	ServSock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 
 	memset(&Addr, 0, sizeof(Addr));
 	Addr.sin_family = AF_INET;
