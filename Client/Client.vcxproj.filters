@@ -27,5 +27,11 @@
     <ClCompile Include="Echo_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Echo_Client_Solve.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator_Client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
