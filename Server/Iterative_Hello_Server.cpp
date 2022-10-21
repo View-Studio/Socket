@@ -38,6 +38,7 @@ int main(int argc, char* argv[])
 	ServAddr.sin_family = AF_INET;
 	ServAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 	ServAddr.sin_port = htons(atoi(argv[1]));
+	//ServAddr.sin_port = htons(9999);
 
 	if (bind(ServSock, (SOCKADDR*)&ServAddr, sizeof(ServAddr)) == SOCKET_ERROR)
 	{
@@ -51,8 +52,10 @@ int main(int argc, char* argv[])
 
 	szClntAddr = sizeof(ClntAddr);
 	MessageLength = (int)strlen(Message);
-	buffer[0] = MessageLength;
-	strcpy_s((buffer + 1), sizeof(buffer), Message);
+	buffer[0] = (char)MessageLength;
+	// buffer + 1 부터 Message 변수의 데이터 복사본을 저장하려고 하기 때문에 sizeof(buffer)에 -1을 해줘야 한다.
+	// 그러지 않으면 Run-Time Check Failure #2 - Stack around the variable '변수이름' was corrupted 런타임 에러가 발생한다.
+	strcpy_s((buffer + 1), sizeof(buffer)-1, Message);
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -67,7 +70,7 @@ int main(int argc, char* argv[])
 		}
 
 		send(ClntSock, buffer, BUF_SIZE, 0);
-
+		
 		closesocket(ClntSock);
 	}
 

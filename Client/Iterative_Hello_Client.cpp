@@ -38,7 +38,9 @@ int main(int argc, char* argv[])
 	memset(&ServAddr, 0, sizeof(ServAddr));
 	ServAddr.sin_family = AF_INET;
 	ServAddr.sin_addr.s_addr = inet_addr(argv[1]);
+	//ServAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 	ServAddr.sin_port = htons(atoi(argv[2]));
+	//ServAddr.sin_port = htons(9999);
 
 	if (connect(MySock, (SOCKADDR*)&ServAddr, sizeof(ServAddr)) == SOCKET_ERROR)
 	{
