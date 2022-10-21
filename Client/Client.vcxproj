@@ -143,6 +143,7 @@
     <ClCompile Include="Echo_Client.cpp" />
     <ClCompile Include="Echo_Client_Solve.cpp" />
     <ClCompile Include="Hello_Client.cpp" />
+    <ClCompile Include="Iterative_Hello_Client.cpp" />
     <ClCompile Include="TCP_Client.cpp" />
     <ClCompile Include="TCP_IO_Client.cpp" />
   </ItemGroup>

@@ -143,6 +143,7 @@
     <ClCompile Include="Calculator_Server.cpp" />
     <ClCompile Include="Echo_Server.cpp" />
     <ClCompile Include="Hello_Server.cpp" />
+    <ClCompile Include="Iterative_Hello_Server.cpp" />
     <ClCompile Include="TCP_IO_Server.cpp" />
     <ClCompile Include="TCP_Server.cpp" />
   </ItemGroup>

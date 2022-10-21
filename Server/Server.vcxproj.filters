@@ -30,5 +30,8 @@
     <ClCompile Include="Calculator_Server.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Iterative_Hello_Server.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -33,5 +33,8 @@
     <ClCompile Include="Calculator_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Iterative_Hello_Client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
