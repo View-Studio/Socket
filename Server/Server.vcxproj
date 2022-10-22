@@ -145,7 +145,7 @@
     <ClCompile Include="Hello_Server.cpp" />
     <ClCompile Include="Iterative_Hello_Server.cpp" />
     <ClCompile Include="TCP_IO_Server.cpp" />
-    <ClCompile Include="TCP_Server.cpp" />
+    <ClCompile Include="TCP_Server_v1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

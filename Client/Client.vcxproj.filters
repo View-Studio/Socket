@@ -18,7 +18,7 @@
     <ClCompile Include="Hello_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="TCP_Client.cpp">
+    <ClCompile Include="TCP_Client_v1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="TCP_IO_Client.cpp">
