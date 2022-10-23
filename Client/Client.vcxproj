@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\ClientTest\FlieRecv_Client.cpp" />
+    <ClCompile Include="..\ClientTest\TCP_Client_v2.cpp" />
     <ClCompile Include="Calculator_Client.cpp" />
     <ClCompile Include="Echo_Client.cpp" />
     <ClCompile Include="Echo_Client_Solve.cpp" />
