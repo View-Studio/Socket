@@ -28,10 +28,10 @@ int main(int argc, char* argv[])
 	int SendMessageSize = 0;
 	ifstream InputFile;
 
-	/*if (argc != 2)
+	if (argc != 2)
 	{
 		ErrorHandling("main function parameter Error");
-	}*/
+	}
 
 	if (WSAStartup(MAKEWORD(2, 2), &wsaData) == SOCKET_ERROR)
 	{
@@ -47,8 +47,7 @@ int main(int argc, char* argv[])
 	memset(&ServAddr, 0, sizeof(ServAddr));
 	ServAddr.sin_family = AF_INET;
 	ServAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-	ServAddr.sin_port = htons(9999);
-	//ServAddr.sin_port = htons(atoi(argv[1]));
+	ServAddr.sin_port = htons(atoi(argv[1]));
 
 	if (bind(ServSock, (SOCKADDR*)&ServAddr, sizeof(ServAddr)) == SOCKET_ERROR)
 	{
@@ -75,13 +74,13 @@ int main(int argc, char* argv[])
 	switch (atoi(&RecvBuffer[1]))
 	{
 	case FileKind::Japan:
-		InputFile.open("../PracticeMaterial/Japan.jpg", ios::in | ios::binary);
+		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Japan.jpg", ios::in | ios::binary);
 		break;
 	case FileKind::Ainmation:
-		InputFile.open("../PracticeMaterial/Animation.jpg", ios::in | ios::binary);
+		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Animation.jpg", ios::in | ios::binary);
 		break;
 	case FileKind::Wise_Saying:
-		InputFile.open("../PracticeMaterial/Wise_Saying.jpg", ios::in | ios::binary);
+		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Wise_Saying.jpg", ios::in | ios::binary);
 		break;
 	default:
 		break;
