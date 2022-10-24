@@ -49,6 +49,8 @@ int main(int argc, char* argv[])
 	ServAddr.sin_family = AF_INET;
 	ServAddr.sin_addr.s_addr = inet_addr(argv[1]);
 	ServAddr.sin_port = htons(atoi(argv[2]));
+	/*ServAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	ServAddr.sin_port = htons(9999);*/
 
 	if (connect(MySock, (SOCKADDR*)&ServAddr, sizeof(ServAddr)) == SOCKET_ERROR)
 	{
@@ -93,13 +95,15 @@ int main(int argc, char* argv[])
 		{
 			ErrorHandling("recv Error 2");
 		}
-		else if (RecvLenTmp == EOF)
+		// 상대 소켓이 closesocket 또는 shutdown을 호출했을 경우 EOF가 내 소켓의 입력버퍼에 전송됨.
+		// 단, 소켓에서의 EOF는 상수 0 이다.
+		else if (RecvLenTmp == 0)
 		{
+			OutputFile.close();
 			break;
 		}
 	}
-
-	OutputFile.close();
+	
 	closesocket(MySock);
 	WSACleanup();
 

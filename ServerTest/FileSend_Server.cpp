@@ -48,6 +48,7 @@ int main(int argc, char* argv[])
 	ServAddr.sin_family = AF_INET;
 	ServAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 	ServAddr.sin_port = htons(atoi(argv[1]));
+	//ServAddr.sin_port = htons(9999);
 
 	if (bind(ServSock, (SOCKADDR*)&ServAddr, sizeof(ServAddr)) == SOCKET_ERROR)
 	{
@@ -94,12 +95,16 @@ int main(int argc, char* argv[])
 
 		if (InputFile.eof())
 		{
-			Sleep(2000);
+			InputFile.close();
+			// 출력 스트림만 종료하는 Half-close.
+			shutdown(ClntSock, SD_SEND);
+			// 상대 소켓이 closesocket 또는 shutdown을 호출했을 경우 EOF가 내 소켓의 입력버퍼에 전송됨.
+			// 단, 소켓에서의 EOF는 상수 0 이다.
+			while (recv(ClntSock, &RecvBuffer[0], BUF_SiZE, 0) != 0)
 			break;
 		}
 	}
 	
-	InputFile.close();
 	closesocket(ClntSock);
 	closesocket(ServSock);
 	WSACleanup();
