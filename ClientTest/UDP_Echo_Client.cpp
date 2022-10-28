@@ -7,13 +7,17 @@
 
 using namespace std;
 
+const int BUF_SIZE = 50;
+
 void ErrorHandling(const char* message);
 
 int main(int argc, char* argv[])
 {
 	WSADATA wsaData;
 	SOCKET MySock;
-	SOCKADDR_IN MyAddr, ServAddr;
+	SOCKADDR_IN ServAddr;
+	char SendBuffer[BUF_SIZE] = "Hi, I'm UDP Client", RecvBuffer[BUF_SIZE];
+	int ServAddrSize = 0, RecvBufLen = 0;
 
 	if (argc != 3)
 	{
@@ -32,7 +36,20 @@ int main(int argc, char* argv[])
 	ServAddr.sin_addr.s_addr = inet_addr(argv[1]);
 	ServAddr.sin_port = htons(atoi(argv[2]));
 
-	// TODO
+	ServAddrSize = sizeof(ServAddr);
+	while (true)
+	{
+		cout << "> ";
+		cin >> SendBuffer;
+
+		sendto(MySock, SendBuffer, (int)sizeof(SendBuffer), 0, (SOCKADDR*)&ServAddr, sizeof(ServAddr));
+		recvfrom(MySock, RecvBuffer, BUF_SIZE, 0, (SOCKADDR*)&ServAddr, &ServAddrSize);
+
+		cout << RecvBuffer << endl;
+	}
+
+	closesocket(MySock);
+	WSACleanup();
 
 	return 0;
 }

@@ -5,6 +5,8 @@
 
 using namespace std;
 
+const int BUF_SIZE = 50;
+
 void ErrorHandling(const char* message);
 
 int main(int argc, char* argv[])
@@ -12,7 +14,9 @@ int main(int argc, char* argv[])
 	WSADATA wsaData;
 	SOCKET ServSock;
 	SOCKADDR_IN ServAddr, ClntAddr;
-	int ClntAddrSize = 0;
+	char SendBuffer[BUF_SIZE] = "WOW! UDP Socket Send to Client";
+	char RecvBuffer[BUF_SIZE];
+	int ClntAddrSize = 0, RecvBufLen = 0;
 
 	if (argc != 2)
 	{
@@ -40,7 +44,17 @@ int main(int argc, char* argv[])
 		ErrorHandling("bind Error");
 	}
 
-	// TODO 
+	while (true)
+	{
+		ClntAddrSize = sizeof(ClntAddr);
+		RecvBufLen = recvfrom(ServSock, RecvBuffer, BUF_SIZE, 0, (SOCKADDR*)&ClntAddr, &ClntAddrSize);
+		sendto(ServSock, SendBuffer, (int)sizeof(SendBuffer), 0, (SOCKADDR*)&ClntAddr, ClntAddrSize);
+
+		cout << RecvBuffer << endl;
+	}
+
+	closesocket(ServSock);
+	WSACleanup();
 
 	return 0;
 }
