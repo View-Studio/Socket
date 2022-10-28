@@ -42,5 +42,8 @@
     <ClCompile Include="..\ClientTest\FlieRecv_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="..\ClientTest\UDP_Echo_Client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
