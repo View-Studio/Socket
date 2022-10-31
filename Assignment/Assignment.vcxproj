@@ -144,6 +144,7 @@
     <ClCompile Include="AddressToString.cpp" />
     <ClCompile Include="CopyFiles.cpp" />
     <ClCompile Include="Endian_Conv.cpp" />
+    <ClCompile Include="Fork.cpp" />
     <ClCompile Include="Internet_Address_Init_Client.cpp" />
     <ClCompile Include="Internet_Address_Init_Server.cpp" />
     <ClCompile Include="Socket_Bind_Internet_Address.cpp" />

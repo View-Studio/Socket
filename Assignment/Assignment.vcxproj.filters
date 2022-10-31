@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\Example\Chapter03">
       <UniqueIdentifier>{377681ae-beb6-4c8f-b8d0-9431e08ad861}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Example\Chapter10">
+      <UniqueIdentifier>{7b109684-ad98-454e-9843-6b6deb9e31f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CopyFiles.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="String_Address_Trans_WSA.cpp">
       <Filter>소스 파일\Example\Chapter03</Filter>
+    </ClCompile>
+    <ClCompile Include="Fork.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
