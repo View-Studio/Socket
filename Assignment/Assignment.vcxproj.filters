@@ -57,10 +57,13 @@
     <ClCompile Include="Zombie.cpp">
       <Filter>소스 파일\Example\Chapter10</Filter>
     </ClCompile>
-    <ClCompile Include="wait.cpp">
+    <ClCompile Include="Wait.cpp">
       <Filter>소스 파일\Example\Chapter10</Filter>
     </ClCompile>
     <ClCompile Include="Wait_PID.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
+    <ClCompile Include="Signal.cpp">
       <Filter>소스 파일\Example\Chapter10</Filter>
     </ClCompile>
   </ItemGroup>

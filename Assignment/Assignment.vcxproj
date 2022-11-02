@@ -147,10 +147,11 @@
     <ClCompile Include="Fork.cpp" />
     <ClCompile Include="Internet_Address_Init_Client.cpp" />
     <ClCompile Include="Internet_Address_Init_Server.cpp" />
+    <ClCompile Include="Signal.cpp" />
     <ClCompile Include="Socket_Bind_Internet_Address.cpp" />
     <ClCompile Include="StringToAddress.cpp" />
     <ClCompile Include="String_Address_Trans_WSA.cpp" />
-    <ClCompile Include="wait.cpp" />
+    <ClCompile Include="Wait.cpp" />
     <ClCompile Include="Wait_PID.cpp" />
     <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
