@@ -54,5 +54,14 @@
     <ClCompile Include="Fork.cpp">
       <Filter>소스 파일\Example\Chapter10</Filter>
     </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
+    <ClCompile Include="wait.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
+    <ClCompile Include="Wait_PID.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
