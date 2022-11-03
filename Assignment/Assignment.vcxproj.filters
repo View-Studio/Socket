@@ -66,5 +66,11 @@
     <ClCompile Include="Signal.cpp">
       <Filter>소스 파일\Example\Chapter10</Filter>
     </ClCompile>
+    <ClCompile Include="SigAction.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
+    <ClCompile Include="Remove_Zombie.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

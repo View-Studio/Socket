@@ -147,6 +147,8 @@
     <ClCompile Include="Fork.cpp" />
     <ClCompile Include="Internet_Address_Init_Client.cpp" />
     <ClCompile Include="Internet_Address_Init_Server.cpp" />
+    <ClCompile Include="Remove_Zombie.cpp" />
+    <ClCompile Include="SigAction.cpp" />
     <ClCompile Include="Signal.cpp" />
     <ClCompile Include="Socket_Bind_Internet_Address.cpp" />
     <ClCompile Include="StringToAddress.cpp" />
