@@ -1,4 +1,7 @@
+// Linux Code
+
 #include <iostream>
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -36,31 +39,27 @@ int main(int argc, char* argv[])
 		ErrorHandling("connect Error");
 	}
 
-	MessageLength = (int)strlen(SendMessage[0]);
-	SendBuffer[0] = (char)MessageLength;
-	strcpy(SendBuffer + 1, SendMessage[0]);
-
-	if (write(MySock, SendBuffer, sizeof(SendBuffer)) == -1)
+	while (true)
 	{
-		ErrorHandling("send Error");
-	}
+		cout << "> ";
+		cin >> SendBuffer;
 
-	if (read(MySock, RecvBuffer, 1) == -1)
-	{
-		ErrorHandling("recv Error 1");
-	}
-
-	RecvLen = 1;
-	while (RecvLen < (int)RecvBuffer[0])
-	{
-		if ((RecvTmp = read(MySock, &RecvBuffer[RecvLen], MAX_BUF_SIZE - 1)) == -1)
+		if (write(MySock, SendBuffer, sizeof(SendBuffer)) == -1)
 		{
-			ErrorHandling("recv Error 2");
+			ErrorHandling("send Error");
 		}
-		RecvLen += RecvTmp;
-	}
 
-	cout << (RecvBuffer + 1) << endl;
+		RecvLen = 0;
+		while (RecvLen < sizeof(SendBuffer))
+		{
+			if ((RecvTmp = read(MySock, &RecvBuffer[RecvLen], MAX_BUF_SIZE - 1)) == -1)
+			{
+				ErrorHandling("recv Error 2");
+			}
+			RecvLen += RecvTmp;
+		}
+		cout << RecvBuffer << endl;
+	}
 
 	close(MySock);
 

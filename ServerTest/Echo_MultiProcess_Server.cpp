@@ -1,6 +1,7 @@
 // Linux Code
 
 #include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
@@ -19,8 +20,8 @@ void SIGCHLD_Handler(int sig);
 int main(int argc, char* argv[])
 {
 	pid_t pid = 0;
-	int ServSock, ClntSock = 0;
-	sockaddr_in ServAddr, ClntAddr;
+	int ServSock, ClntSock = 0, ChildProcessIdx = 0;
+	struct sockaddr_in ServAddr, ClntAddr;
 
 	struct sigaction SigAct;
 	SigAct.sa_handler = SIGCHLD_Handler;
@@ -29,7 +30,7 @@ int main(int argc, char* argv[])
 	sigaction(SIGCHLD, &SigAct, 0);
 
 	socklen_t ClntAddrSize;
-	int RecvTempLen = 0, RecvBufLen = 1;
+	int RecvBufLen = 0;
 	char SendBuffer[MAX_BUF_SIZE], RecvBuffer[MAX_BUF_SIZE];
 	
 	if (argc != 2)
@@ -48,7 +49,7 @@ int main(int argc, char* argv[])
 	ServAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 	ServAddr.sin_port = htons(atoi(argv[1]));
 
-	if (bind(ServSock, (sockaddr*)&ServAddr, sizeof(ServAddr)) == -1)
+	if (bind(ServSock, (struct sockaddr*)&ServAddr, sizeof(ServAddr)) == -1)
 	{
 		ErrorHandling("bind Error");
 	}
@@ -57,48 +58,48 @@ int main(int argc, char* argv[])
 	{
 		ErrorHandling("listen Error");
 	}
-
-	ClntAddrSize = sizeof(ClntAddr);
-	ClntSock = accept(ServSock, (sockaddr*)&ClntAddr, &ClntAddrSize);
-
-	pid = fork();
-
-	for (int i = 0; i < 4; ++i)
+		
+	while (true)
 	{
-		if (pid == 0)
+		ClntAddrSize = sizeof(ClntAddr);
+		ClntSock = accept(ServSock, (struct sockaddr*)&ClntAddr, &ClntAddrSize);
+		if (ClntSock == -1)
 		{
-			if (ClntSock == -1)
-			{
-				ErrorHandling("accept Error");
-			}
-
-			if (read(ClntSock, RecvBuffer, 1) == -1)
-			{
-				ErrorHandling("read Error 1");
-			}
-			
-			while (RecvBufLen < atoi((const char*)RecvBuffer[0]))
-			{
-				RecvTempLen = read(ClntSock, &RecvBuffer[RecvBufLen], (MAX_BUF_SIZE - 1));
-				RecvBufLen += RecvTempLen;
-			}
-
-			strcpy(SendBuffer, RecvBuffer);
-			if (write(ClntSock, SendBuffer, sizeof(SendBuffer)) == -1)
-			{
-				ErrorHandling("write Error");
-			}
-
-			cout << "Child Process ID : " << pid << ", RecvBuffer : " << (RecvBuffer + 1) << endl;
-			shutdown(ClntSock, SHUT_WR);
-			while (read(ClntSock, RecvBuffer, 1) != 0);
-			exit(1);
+			continue;
 		}
 		else
 		{
-			ClntSock = accept(ServSock, (sockaddr*)&ClntAddr, &ClntAddrSize);
+			cout << "New Client Conneceted..." << endl;
+		}
 
-			pid = fork();
+		pid = fork();
+		if (pid == -1)
+		{
+			close(ClntSock);
+			continue;
+		}
+		if (pid == 0) // Child Process
+		{
+			++ChildProcessIdx;
+			close(ServSock);
+						
+			while ((RecvBufLen = read(ClntSock, RecvBuffer, MAX_BUF_SIZE - 1) != -1)) // atoi(RecvBuffer[0]) 쓰지말기
+			{
+				if (write(ClntSock, RecvBuffer, RecvBufLen) == -1)
+				{
+					ErrorHandling("write Error");
+				}
+				cout << "Child Process IDX : " << ChildProcessIdx << ", RecvBuffer : " << RecvBuffer << endl;
+				RecvBufLen = 0;
+			}
+
+			close(ClntSock);
+			return 0;
+		} 
+		else // Parent Process
+		{
+			close(ClntSock);
+			++ChildProcessIdx;
 		}
 	}
 	
