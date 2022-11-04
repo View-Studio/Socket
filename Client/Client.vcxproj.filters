@@ -48,5 +48,8 @@
     <ClCompile Include="..\ClientTest\UDP_Chatting_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="..\ClientTest\Echo_MultiProcess_Client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

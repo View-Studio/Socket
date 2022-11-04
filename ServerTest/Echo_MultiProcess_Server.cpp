@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
 						
 			while ((RecvBufLen = read(ClntSock, RecvBuffer, MAX_BUF_SIZE - 1) != -1)) // atoi(RecvBuffer[0]) 쓰지말기
 			{
-				if (write(ClntSock, RecvBuffer, RecvBufLen) == -1)
+				if (write(ClntSock, RecvBuffer, sizeof(RecvBuffer)) == -1) // 세번째 인수 무조건 sizeof로 하기
 				{
 					ErrorHandling("write Error");
 				}
