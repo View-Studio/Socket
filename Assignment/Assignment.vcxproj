@@ -149,6 +149,7 @@
     <ClCompile Include="Forked_Process_Fd_Equal_Original_Process_Fd.cpp" />
     <ClCompile Include="Internet_Address_Init_Client.cpp" />
     <ClCompile Include="Internet_Address_Init_Server.cpp" />
+    <ClCompile Include="IPC_PIPE_Send_And_Recv.cpp" />
     <ClCompile Include="Remove_Zombie.cpp" />
     <ClCompile Include="SigAction.cpp" />
     <ClCompile Include="Signal.cpp" />

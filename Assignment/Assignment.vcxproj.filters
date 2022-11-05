@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\Example\Chapter10">
       <UniqueIdentifier>{7b109684-ad98-454e-9843-6b6deb9e31f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Example\Chapter11">
+      <UniqueIdentifier>{2cd9f45e-cf16-422e-bff7-8595d4a6d17f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CopyFiles.cpp">
@@ -77,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="Ctrl_C_Program.cpp">
       <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
+    <ClCompile Include="IPC_PIPE_Send_And_Recv.cpp">
+      <Filter>소스 파일\Example\Chapter11</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
