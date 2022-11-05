@@ -72,5 +72,11 @@
     <ClCompile Include="Remove_Zombie.cpp">
       <Filter>소스 파일\Example\Chapter10</Filter>
     </ClCompile>
+    <ClCompile Include="Forked_Process_Fd_Equal_Original_Process_Fd.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
+    <ClCompile Include="Ctrl_C_Program.cpp">
+      <Filter>소스 파일\Example\Chapter10</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

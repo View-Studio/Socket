@@ -143,8 +143,10 @@
   <ItemGroup>
     <ClCompile Include="AddressToString.cpp" />
     <ClCompile Include="CopyFiles.cpp" />
+    <ClCompile Include="Ctrl_C_Program.cpp" />
     <ClCompile Include="Endian_Conv.cpp" />
     <ClCompile Include="Fork.cpp" />
+    <ClCompile Include="Forked_Process_Fd_Equal_Original_Process_Fd.cpp" />
     <ClCompile Include="Internet_Address_Init_Client.cpp" />
     <ClCompile Include="Internet_Address_Init_Server.cpp" />
     <ClCompile Include="Remove_Zombie.cpp" />
