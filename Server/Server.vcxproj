@@ -143,6 +143,7 @@
     <ClCompile Include="..\ClientTest\TCP_Server_v2.cpp" />
     <ClCompile Include="..\ServerTest\Echo_MultiProcess_Server.cpp" />
     <ClCompile Include="..\ServerTest\FileSend_Server.cpp" />
+    <ClCompile Include="..\ServerTest\Message_Save_Echo_Server.cpp" />
     <ClCompile Include="..\ServerTest\UDP_Chatting_Server.cpp" />
     <ClCompile Include="..\ServerTest\UDP_Echo_Server.cpp" />
     <ClCompile Include="Calculator_Server.cpp" />
