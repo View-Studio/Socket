@@ -153,6 +153,7 @@
     <ClCompile Include="One_pipe_One_Way_Communication.cpp" />
     <ClCompile Include="One_Pipe_Two_Way_Communication.cpp" />
     <ClCompile Include="Remove_Zombie.cpp" />
+    <ClCompile Include="Select.cpp" />
     <ClCompile Include="SigAction.cpp" />
     <ClCompile Include="Signal.cpp" />
     <ClCompile Include="Socket_Bind_Internet_Address.cpp" />

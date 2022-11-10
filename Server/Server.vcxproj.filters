@@ -51,5 +51,8 @@
     <ClCompile Include="..\ServerTest\Message_Save_Echo_Server.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Echo_Multiplexing_Server.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
