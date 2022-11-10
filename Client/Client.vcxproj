@@ -139,8 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\ClientTest\Echo_Client_Char.cpp" />
     <ClCompile Include="..\ClientTest\Echo_MultiProcess_Client.cpp" />
-    <ClCompile Include="..\ClientTest\TCP_Client_v2.cpp" />
     <ClCompile Include="..\ClientTest\UDP_Chatting_Client.cpp" />
     <ClCompile Include="..\ClientTest\UDP_Echo_Client.cpp" />
     <ClCompile Include="Calculator_Client.cpp" />
@@ -151,6 +151,7 @@
     <ClCompile Include="Hello_Client.cpp" />
     <ClCompile Include="Iterative_Hello_Client.cpp" />
     <ClCompile Include="TCP_Client_v1.cpp" />
+    <ClCompile Include="TCP_Client_v2.cpp" />
     <ClCompile Include="TCP_IO_Client.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

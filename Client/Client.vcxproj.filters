@@ -24,19 +24,10 @@
     <ClCompile Include="TCP_IO_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Echo_Client.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Echo_Client_Solve.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Calculator_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Iterative_Hello_Client.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ClientTest\TCP_Client_v2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="..\ClientTest\UDP_Echo_Client.cpp">
@@ -52,6 +43,18 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="FlieRecv_Client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Echo_Client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Echo_Client_Solve.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Client_v2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ClientTest\Echo_Client_Char.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
