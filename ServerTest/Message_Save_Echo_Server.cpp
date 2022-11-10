@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
 		for (int i = 0; i < 10; ++i)
 		{
 			RecvLen = read(ParentSendPipeFds[0], RecvBuffer, M_BUF_SIZE); // read 반환값은 받은 바이트 수이고, 최대 값은 3번째 인수에 들어간 수만큼 이다.
-			// 즉, 세번째 인수 값이 100인데 클라이언트가 1024바이트인 데이터를 보냈다면 100을 10번 반환하고, 24를 1번 반환한다.
+			// 즉, 세번째 인수 값이 100인데 전송 측이 1024바이트인 데이터를 보냈다면 100을 10번 반환하고, 24를 1번 반환한다.
 			
 			write(OutputFileFd, RecvBuffer, strlen(RecvBuffer)); // 위의 이유로 세번째 인수에 read 반환값을 넣는 것은 위험하기 때문에, read 반환값 대신에 받은 문자열 strlen 값 넣기.
 		}
