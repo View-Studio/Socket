@@ -36,9 +36,6 @@
     <ClCompile Include="..\ClientTest\UDP_Chatting_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\ClientTest\Echo_MultiProcess_Client.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Echo_IO_Routine_Split_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -55,6 +52,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="..\ClientTest\Echo_Client_Char.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Echo_MultiProcess_Client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ClientTest\IO_Routine_Split_Chatting_Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

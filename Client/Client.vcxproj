@@ -140,13 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ClientTest\Echo_Client_Char.cpp" />
-    <ClCompile Include="..\ClientTest\Echo_MultiProcess_Client.cpp" />
+    <ClCompile Include="..\ClientTest\IO_Routine_Split_Chatting_Client.cpp" />
     <ClCompile Include="..\ClientTest\UDP_Chatting_Client.cpp" />
     <ClCompile Include="..\ClientTest\UDP_Echo_Client.cpp" />
     <ClCompile Include="Calculator_Client.cpp" />
     <ClCompile Include="Echo_Client.cpp" />
     <ClCompile Include="Echo_Client_Solve.cpp" />
     <ClCompile Include="Echo_IO_Routine_Split_Client.cpp" />
+    <ClCompile Include="Echo_MultiProcess_Client.cpp" />
     <ClCompile Include="FlieRecv_Client.cpp" />
     <ClCompile Include="Hello_Client.cpp" />
     <ClCompile Include="Iterative_Hello_Client.cpp" />
