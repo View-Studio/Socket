@@ -64,24 +64,17 @@ void ErrorHandling(const char* message)
 
 void InputRoutine(int sock, char RecvBuffer[])
 {
-	int TempLen = 0, RecvLen = 0;
-	char TotalLen = ' ';
+	int TempLen = 0;
 	while (true)
 	{
-		RecvLen = 1;
-		read(sock, &TotalLen, 1);
-		while (RecvLen < (int)TotalLen)
+		TempLen = read(sock, RecvBuffer, MAX_BUF_SIZE - 1);
+		if (TempLen == 0)
 		{
-			TempLen = read(sock, &RecvBuffer[RecvLen], ((int)(TotalLen) - 1));
-			if (TempLen == 0)
-			{
-				shutdown(sock, SHUT_RD);
-				return;
-			}
-			RecvLen += TempLen;
+			shutdown(sock, SHUT_RD);
+			return;
 		}
-		cout << "> " << RecvBuffer << endl;
-	}
+		cout << RecvBuffer << endl;
+	}	
 }
 
 void OutputRoutine(int sock, char SendBuffer[])
@@ -89,17 +82,17 @@ void OutputRoutine(int sock, char SendBuffer[])
 	unsigned char SendBufferLength = 0;
 	while (true)
 	{
-		cout << "> ";
 		cin >> SendBuffer;
 
-		if (SendBuffer == "Q" || SendBuffer == "q")
+		if (strlen(SendBuffer) == 1)
 		{
-			shutdown(sock, SHUT_WR);
-			return;
+			if (SendBuffer[0] == 'Q' || SendBuffer[0] == 'q')
+			{
+				shutdown(sock, SHUT_WR);
+				return;
+			}
 		}
 
-		SendBufferLength = (unsigned char)(strlen(SendBuffer) + 1);
-		write(sock, &SendBufferLength, sizeof(unsigned char));
-		write(sock, SendBuffer, SendBufferLength);
+		write(sock, SendBuffer, strlen(SendBuffer) + 1);
 	}
 }
