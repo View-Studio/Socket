@@ -152,6 +152,8 @@
     <ClCompile Include="IPC_PIPE_Send_And_Recv.cpp" />
     <ClCompile Include="One_pipe_One_Way_Communication.cpp" />
     <ClCompile Include="One_Pipe_Two_Way_Communication.cpp" />
+    <ClCompile Include="OOB_Recv.cpp" />
+    <ClCompile Include="OOB_Send.cpp" />
     <ClCompile Include="Remove_Zombie.cpp" />
     <ClCompile Include="Select.cpp" />
     <ClCompile Include="SelectEventTest.cpp" />

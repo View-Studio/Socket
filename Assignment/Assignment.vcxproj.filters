@@ -31,6 +31,9 @@
     <Filter Include="소스 파일\Example\Chapter12">
       <UniqueIdentifier>{fa133ef6-8765-4610-9e9d-77acacbb7cb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Example\Chapter13">
+      <UniqueIdentifier>{8009d8bf-fde9-4b49-9546-1c6cfefdc1ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CopyFiles.cpp">
@@ -101,6 +104,12 @@
     </ClCompile>
     <ClCompile Include="SelectEventTest.cpp">
       <Filter>소스 파일\Example\Chapter12</Filter>
+    </ClCompile>
+    <ClCompile Include="OOB_Send.cpp">
+      <Filter>소스 파일\Example\Chapter13</Filter>
+    </ClCompile>
+    <ClCompile Include="OOB_Recv.cpp">
+      <Filter>소스 파일\Example\Chapter13</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
