@@ -24,6 +24,11 @@ int main(int argc, char* argv[])
 	char RecvBuffer[MAX_BUF_SIZE];
 	int RecvLen = 0;
 
+	SigAct.sa_handler = SIGURG_Handler;
+	sigemptyset(&SigAct.sa_mask);
+	SigAct.sa_flags = 0;
+	sigaction(SIGURG, &SigAct, 0);
+
 	if (argc != 2)
 	{
 		ErrorHandling("main function parameter Error");
@@ -49,11 +54,6 @@ int main(int argc, char* argv[])
 	{
 		ErrorHandling("listen Error");
 	}
-
-	SigAct.sa_handler = SIGURG_Handler;
-	sigemptyset(&SigAct.sa_mask);
-	SigAct.sa_flags = 0;
-	sigaction(SIGURG, &SigAct, 0);
 	
 	SendAddrSize = sizeof(SendAddr);
 	SendSock = accept(ListenSock, (sockaddr*)&SendAddr, &SendAddrSize);
@@ -61,12 +61,14 @@ int main(int argc, char* argv[])
 	{
 		ErrorHandling("accept Error");
 	}
-
-	fcntl(SendSock, F_SETOWN, getpid());
+	else
+	{
+		fcntl(SendSock, F_SETOWN, getpid());
+	}
 	
 	while (true)
 	{
-		RecvLen = recv(SendSock, RecvBuffer, MAX_BUF_SIZE, 0);
+		RecvLen = recv(SendSock, RecvBuffer, sizeof(RecvBuffer), 0);
 		if (RecvLen == 0)
 		{
 			break;
@@ -93,7 +95,7 @@ void SIGURG_Handler(int sig)
 	{
 		char RecvBuffer[MAX_BUF_SIZE];
 		int RecvLen = 0;
-		RecvLen = recv(SendSock, RecvBuffer, MAX_BUF_SIZE - 1, MSG_OOB);
+		RecvLen = recv(SendSock, RecvBuffer, sizeof(RecvBuffer), MSG_OOB);
 		cout << "[SIGURG] : " << RecvBuffer << endl;
 	}
 }

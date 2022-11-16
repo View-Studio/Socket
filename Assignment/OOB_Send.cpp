@@ -6,6 +6,7 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <signal.h>
+#include <netinet/in.h>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ void ErrorHandling(const char* message);
 
 int main(int argc, char* argv[])
 {
-	int Sock;
+	int Sock, ByteLen;
 	sockaddr_in RecvAddr;
 
 	if (argc != 3)
@@ -39,11 +40,15 @@ int main(int argc, char* argv[])
 		ErrorHandling("connect Error");
 	}
 
-	write(Sock, "HAHA", strlen("HAHA") + 1);
-	send(Sock, " I'm a King!", strlen(" I'm a King!") + 1, 0);
-	send(Sock, " Wow!!", strlen(" Wow!!") + 1, MSG_OOB);
-	write(Sock, " HAHAHAHA", strlen(" HAHAHAHA") + 1);
-	send(Sock, " Wow!!", strlen(" Wow!!") + 1, MSG_OOB);
+	const char* SendArr[5] = { "HAHA", " I'm a King!", " Wow!!", " HAHAHAHA", " Wow!!" };
+
+	send(Sock, SendArr[0], strlen(SendArr[0]), 0);
+	write(Sock, SendArr[1], strlen(SendArr[1]));
+	sleep(1); 
+	send(Sock, SendArr[2], strlen(SendArr[2]), MSG_OOB);
+	write(Sock, SendArr[3], strlen(SendArr[3]));
+	sleep(1);
+	send(Sock, SendArr[4], strlen(SendArr[4]) + 1, MSG_OOB);
 
 	close(Sock);
 

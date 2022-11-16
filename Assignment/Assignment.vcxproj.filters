@@ -111,5 +111,11 @@
     <ClCompile Include="OOB_Recv.cpp">
       <Filter>소스 파일\Example\Chapter13</Filter>
     </ClCompile>
+    <ClCompile Include="Peek_Send.cpp">
+      <Filter>소스 파일\Example\Chapter13</Filter>
+    </ClCompile>
+    <ClCompile Include="Peek_Recv.cpp">
+      <Filter>소스 파일\Example\Chapter13</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
