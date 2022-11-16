@@ -75,13 +75,13 @@ int main(int argc, char* argv[])
 	switch (atoi(&RecvBuffer[1]))
 	{
 	case FileKind::Japan:
-		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Japan.jpg", ios::in | ios::binary);
+		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Japan.jpg", ios::in | ios::binary); // 파일 경로는 사용자 컴퓨터에 따라 알맞게 지정해주세요
 		break;
 	case FileKind::Ainmation:
-		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Animation.jpg", ios::in | ios::binary);
+		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Animation.jpg", ios::in | ios::binary); // 파일 경로는 사용자 컴퓨터에 따라 알맞게 지정해주세요
 		break;
 	case FileKind::Wise_Saying:
-		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Wise_Saying.jpg", ios::in | ios::binary);
+		InputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Wise_Saying.jpg", ios::in | ios::binary); // 파일 경로는 사용자 컴퓨터에 따라 알맞게 지정해주세요
 		break;
 	default:
 		break;

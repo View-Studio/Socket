@@ -65,13 +65,13 @@ int main(int argc, char* argv[])
 	switch (atoi(&SendBuffer[1]))
 	{
 	case FileKind::Japan:
-		OutputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Japan_Copy.jpg", ios::out | ios::binary);
+		OutputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Japan_Copy.jpg", ios::out | ios::binary); // 파일 경로는 사용자 컴퓨터에 따라 알맞게 지정해주세요
 		break;
 	case FileKind::Ainmation:
-		OutputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Ainmation_Copy.jpg", ios::out | ios::binary);
+		OutputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Ainmation_Copy.jpg", ios::out | ios::binary); // 파일 경로는 사용자 컴퓨터에 따라 알맞게 지정해주세요
 		break;
 	case FileKind::Wise_Saying:
-		OutputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Wise_Saying_Copy.jpg", ios::out | ios::binary);
+		OutputFile.open("C:/Users/msi/Desktop/Socket/PracticeMaterial/Wise_Saying_Copy.jpg", ios::out | ios::binary); // 파일 경로는 사용자 컴퓨터에 따라 알맞게 지정해주세요
 		break;
 	default:
 		break;
