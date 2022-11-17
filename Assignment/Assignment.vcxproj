@@ -156,6 +156,7 @@
     <ClCompile Include="OOB_Send.cpp" />
     <ClCompile Include="Peek_Recv.cpp" />
     <ClCompile Include="Peek_Send.cpp" />
+    <ClCompile Include="ReadV.cpp" />
     <ClCompile Include="Remove_Zombie.cpp" />
     <ClCompile Include="Select.cpp" />
     <ClCompile Include="SelectEventTest.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="Two_Pipe_Two_Way_Communication.cpp" />
     <ClCompile Include="Wait.cpp" />
     <ClCompile Include="Wait_PID.cpp" />
+    <ClCompile Include="WriteV.cpp" />
     <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

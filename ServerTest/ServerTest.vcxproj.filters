@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Multi_Process_Chatting_Server.cpp">
+    <ClCompile Include="..\Assignment\OOB_Recv_Win.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

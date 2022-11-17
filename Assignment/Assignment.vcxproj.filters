@@ -117,5 +117,11 @@
     <ClCompile Include="Peek_Recv.cpp">
       <Filter>소스 파일\Example\Chapter13</Filter>
     </ClCompile>
+    <ClCompile Include="WriteV.cpp">
+      <Filter>소스 파일\Example\Chapter13</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadV.cpp">
+      <Filter>소스 파일\Example\Chapter13</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
