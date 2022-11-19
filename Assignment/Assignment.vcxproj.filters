@@ -123,5 +123,11 @@
     <ClCompile Include="ReadV.cpp">
       <Filter>소스 파일\Example\Chapter13</Filter>
     </ClCompile>
+    <ClCompile Include="OOB_Send_Win.cpp">
+      <Filter>소스 파일\Example\Chapter13</Filter>
+    </ClCompile>
+    <ClCompile Include="OOB_Recv_Win.cpp">
+      <Filter>소스 파일\Example\Chapter13</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

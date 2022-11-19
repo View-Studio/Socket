@@ -35,6 +35,8 @@ int main(int argc, char* argv[])
 	DestAddr.sin_family = AF_INET;
 	DestAddr.sin_addr.s_addr = inet_addr(argv[1]);
 	DestAddr.sin_port = htons(atoi(argv[2]));
+	/*DestAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	DestAddr.sin_port = htons(9999);*/
 
 	if (connect(MySock, (SOCKADDR*)&DestAddr, sizeof(DestAddr)) == SOCKET_ERROR)
 	{

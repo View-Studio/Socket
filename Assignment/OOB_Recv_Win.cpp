@@ -42,6 +42,7 @@ int main(int argc, char* argv[])
 	ListenAddr.sin_family = AF_INET;
 	ListenAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 	ListenAddr.sin_port = htons(atoi(argv[1]));
+	//ListenAddr.sin_port = htons(9999);
 
 	if (bind(ListenSock, (SOCKADDR*)&ListenAddr, sizeof(ListenAddr)) == SOCKET_ERROR)
 	{

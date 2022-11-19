@@ -153,7 +153,9 @@
     <ClCompile Include="One_pipe_One_Way_Communication.cpp" />
     <ClCompile Include="One_Pipe_Two_Way_Communication.cpp" />
     <ClCompile Include="OOB_Recv.cpp" />
+    <ClCompile Include="OOB_Recv_Win.cpp" />
     <ClCompile Include="OOB_Send.cpp" />
+    <ClCompile Include="OOB_Send_Win.cpp" />
     <ClCompile Include="Peek_Recv.cpp" />
     <ClCompile Include="Peek_Send.cpp" />
     <ClCompile Include="ReadV.cpp" />
