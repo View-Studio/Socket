@@ -141,8 +141,8 @@
   <ItemGroup>
     <ClCompile Include="..\ClientTest\Echo_Client_Char.cpp" />
     <ClCompile Include="..\ClientTest\IO_Routine_Split_Chatting_Client.cpp" />
+    <ClCompile Include="..\ClientTest\News_Receiver.cpp" />
     <ClCompile Include="..\ClientTest\UDP_Chatting_Client.cpp" />
-    <ClCompile Include="..\ClientTest\UDP_Echo_Client.cpp" />
     <ClCompile Include="Calculator_Client.cpp" />
     <ClCompile Include="Echo_Client.cpp" />
     <ClCompile Include="Echo_Client_Solve.cpp" />
@@ -151,9 +151,11 @@
     <ClCompile Include="FlieRecv_Client.cpp" />
     <ClCompile Include="Hello_Client.cpp" />
     <ClCompile Include="Iterative_Hello_Client.cpp" />
+    <ClCompile Include="News_Receiver_BroadCast.cpp" />
     <ClCompile Include="TCP_Client_v1.cpp" />
     <ClCompile Include="TCP_Client_v2.cpp" />
     <ClCompile Include="TCP_IO_Client.cpp" />
+    <ClCompile Include="UDP_Echo_Client.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

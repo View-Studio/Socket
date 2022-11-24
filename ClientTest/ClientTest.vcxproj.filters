@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="News_Receiver.cpp">
+    <ClCompile Include="News_Receiver_Win.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

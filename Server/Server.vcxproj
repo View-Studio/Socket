@@ -143,8 +143,8 @@
     <ClCompile Include="..\ClientTest\TCP_Server_v2.cpp" />
     <ClCompile Include="..\ServerTest\Message_Save_Echo_Server.cpp" />
     <ClCompile Include="..\ServerTest\Multi_Process_Chatting_Server.cpp" />
+    <ClCompile Include="..\ServerTest\News_Sender.cpp" />
     <ClCompile Include="..\ServerTest\UDP_Chatting_Server.cpp" />
-    <ClCompile Include="..\ServerTest\UDP_Echo_Server.cpp" />
     <ClCompile Include="Calculator_Server.cpp" />
     <ClCompile Include="Echo_Multiplexing_Server.cpp" />
     <ClCompile Include="Echo_Multiplexing_Server_Win.cpp" />
@@ -154,8 +154,10 @@
     <ClCompile Include="Hello_Server.cpp" />
     <ClCompile Include="Iterative_Hello_Server.cpp" />
     <ClCompile Include="Multiplexing_Chatting_Server.cpp" />
+    <ClCompile Include="News_Sender_BroadCast.cpp" />
     <ClCompile Include="TCP_IO_Server.cpp" />
     <ClCompile Include="TCP_Server_v1.cpp" />
+    <ClCompile Include="UDP_Echo_Server.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
